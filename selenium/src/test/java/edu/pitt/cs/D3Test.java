@@ -10,6 +10,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.Dimension;
@@ -36,12 +37,12 @@ public class D3Test {
   JavascriptExecutor js;
   @Before
   public void setUp() {
-    driver = new ChromeDriver();
-    js = (JavascriptExecutor) driver;
+    //driver = new ChromeDriver();
     vars = new HashMap<String, Object>();
     ChromeOptions options = new ChromeOptions();
     options.addArguments("--headless");
     driver = new ChromeDriver(options);
+    js = (JavascriptExecutor) driver;
   }
   @After
   public void tearDown() {
